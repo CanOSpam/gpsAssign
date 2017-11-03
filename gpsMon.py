@@ -18,7 +18,7 @@ class gpsMon:
             for new_data in self.gps_socket:
                 if new_data:
                     self.data_stream.unpack(new_data)
-                    print('TPV = ', self.data_stream.TPV['class'])
+                    print('Mode = ', self.data_stream.TPV['mode'])
                     print('Altitude = ', self.data_stream.TPV['alt'])
                     print('Latitude = ', self.data_stream.TPV['lat'])
                     print('Longitude = ', self.data_stream.TPV['lon'])
