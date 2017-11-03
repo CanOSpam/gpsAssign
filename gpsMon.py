@@ -14,12 +14,14 @@ class gpsMon:
         thread.start()
 
     def gpsWorker(self):
-        for new_data in self.gps_socket:
-            if new_data:
-                self.data_stream.unpack(new_data)
-                print('Altitude = ', self.data_stream.TPV['alt'])
-                print('Latitude = ', self.data_stream.TPV['lat'])
-                print('Longitude = ', self.data_stream.TPV['lon'])
+        while(1):
+            for new_data in self.gps_socket:
+                if new_data:
+                    self.data_stream.unpack(new_data)
+                    print('TPV = ', self.data_stream.TPV['class'])
+                    print('Altitude = ', self.data_stream.TPV['alt'])
+                    print('Latitude = ', self.data_stream.TPV['lat'])
+                    print('Longitude = ', self.data_stream.TPV['lon'])
 
-                listOfSatellites = self.data_stream.SKY['satellites']
-                print('All satellites = ', listOfSatellites)
+                    listOfSatellites = self.data_stream.SKY['satellites']
+                    print('All satellites = ', listOfSatellites)
