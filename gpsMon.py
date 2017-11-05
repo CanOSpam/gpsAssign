@@ -21,12 +21,7 @@ class gpsMon:
                 self.data_stream.unpack(new_data)
                 list_of_satellites = self.data_stream.SKY['satellites']
 
-                for satellite in list_of_satellites:
-                    print('PRN = ', satellite['PRN'], end='')
-                    print(' Elevation = ', satellite['el'], end='')
-                    print(' Azimuth = ', satellite['az'], end='')
-                    print(' SNR = ', satellite['ss'], end='')
-                    print(' Used = ', satellite['used'])
+                print(list_of_satellites)
 
                 print('Mode = ', self.data_stream.TPV['mode'], end='')
                 print(' Altitude = ', self.data_stream.TPV['alt'], end='')
