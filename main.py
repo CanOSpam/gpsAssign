@@ -1,7 +1,7 @@
 from gpsMon import gpsMon
 from tkinter import Tk, Label, Button
 from testThread import testThread
-# gps = gpsMon()
+gps = gpsMon()
 testThread = testThread()
 root = Tk()
 
@@ -33,6 +33,7 @@ class MyFirstGUI:
 
 
 my_gui = MyFirstGUI(root)
+gps.startGps()
 while True:
     my_gui.label['text'] = testThread.test
     root.update_idletasks()
