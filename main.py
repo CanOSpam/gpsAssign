@@ -1,8 +1,8 @@
 from gpsMon import gpsMon
 from tkinter import Tk, Label, Button
-from testThread import testThread
+#from testThread import testThread
 gps = gpsMon()
-testThread = testThread()
+#testThread = testThread()
 root = Tk()
 
 def quitNow():
@@ -21,21 +21,22 @@ class MyFirstGUI:
         self.close_button = Button(master, text="Stop Thread", command=self.closeNow)
         self.close_button.pack()
 
-        testThread.startThread()
+        #testThread.startThread()
 
     def greet(self):
-        self.label['text'] = testThread.test
-        print(testThread.test)
+        pass
+        #self.label['text'] = testThread.test
+        #print(testThread.test)
 
     def closeNow(self):
-        testThread.stopNow = True
+        #testThread.stopNow = True
         quitNow()
 
 
 my_gui = MyFirstGUI(root)
 gps.startGps()
 while True:
-    my_gui.label['text'] = testThread.test
+    #my_gui.label['text'] = testThread.test
     root.update_idletasks()
     root.update()
 
