@@ -19,9 +19,9 @@ class gpsMon:
             if new_data:
                 os.system('clear')
                 self.data_stream.unpack(new_data)
-                listOfSatellites = self.data_stream.SKY['satellites']
+                list_of_satellites = self.data_stream.SKY['satellites']
 
-                for satellite in listOfSatellites.items():
+                for satellite in list_of_satellites:
                     print('PRN = ', satellite['PRN'], end='')
                     print(' Elevation = ', satellite['el'], end='')
                     print(' Azimuth = ', satellite['az'], end='')
