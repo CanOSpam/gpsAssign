@@ -1,5 +1,6 @@
 from gps3 import gps3
 import threading
+import os
 
 class gpsMon:
     def __init__(self):
@@ -16,12 +17,20 @@ class gpsMon:
         print('Started gps worker')
         for new_data in self.gps_socket:
             if new_data:
+                os.system('clear')
                 self.data_stream.unpack(new_data)
-                print('Mode = ', self.data_stream.TPV['mode'])
-                print('TPV = ', self.data_stream.TPV)
-                print('Altitude = ', self.data_stream.TPV['alt'])
-                print('Latitude = ', self.data_stream.TPV['lat'])
-                print('Longitude = ', self.data_stream.TPV['lon'])
-
                 listOfSatellites = self.data_stream.SKY['satellites']
-                print('All satellites = ', listOfSatellites)
+
+                for satellite in listOfSatellites.items():
+                    print('PRN = ', satellite['PRN'], end='')
+                    print(' Elevation = ', satellite['el'], end='')
+                    print(' Azimuth = ', satellite['az'], end='')
+                    print(' SNR = ', satellite['ss'], end='')
+                    print(' Used = ', satellite['used'])
+
+                print('Mode = ', self.data_stream.TPV['mode'], end='')
+                print(' Altitude = ', self.data_stream.TPV['alt'], end='')
+                print(' Latitude = ', self.data_stream.TPV['lat'], end='')
+                print(' Longitude = ', self.data_stream.TPV['lon'])
+
+
