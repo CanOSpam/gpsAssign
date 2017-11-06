@@ -17,9 +17,9 @@ class gpsMon:
         print('Started gps worker')
         for new_data in self.gps_socket:
             if new_data:
-                os.system('clear')
                 self.data_stream.unpack(new_data)
                 list_of_satellites = self.data_stream.SKY['satellites']
+                os.system('clear')
 
                 print(list_of_satellites)
 
@@ -27,5 +27,10 @@ class gpsMon:
                 print(' Altitude = ', self.data_stream.TPV['alt'], end='')
                 print(' Latitude = ', self.data_stream.TPV['lat'], end='')
                 print(' Longitude = ', self.data_stream.TPV['lon'])
+
+                for sat in self.data_stream.SKY["satellites"]:
+                    print(sat, end='')
+
+                print('')
 
 
