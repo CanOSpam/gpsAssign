@@ -12,18 +12,20 @@ gps_string = StringVar()
 gps = gpsMon()
 
 #Title
-namelbl = ttk.Label(content, text="GPS APP", font=("Helvetica", 64), foreground="red")
+namelbl = ttk.Label(content, text="GPS APP", font=("Helvetica", 32), foreground="red")
 namelbl.grid(column=0, row=0, columnspan=2,pady=10)
 
 #Frames
-frame1 = ttk.Frame(content, relief="groove", width=1440, height=100)
-frame2 = ttk.Frame(content, relief="groove", width=1440, height=100)
-frame3 = ttk.Frame(content, relief="groove", width=1440, height=100)
-frame4 = ttk.Frame(content, relief="groove", width=1440, height=100)
-frame5 = ttk.Frame(content, relief="groove", width=1440, height=100)
-frame6 = ttk.Frame(content, relief="groove", width=1440, height=100)
+width = 400
+height = 80
+frame1 = ttk.Frame(content, relief="groove", width=width, height=height)
+frame2 = ttk.Frame(content, relief="groove", width=width, height=height)
+frame3 = ttk.Frame(content, relief="groove", width=width, height=height)
+frame4 = ttk.Frame(content, relief="groove", width=width, height=height)
+frame5 = ttk.Frame(content, relief="groove", width=width, height=height)
+frame6 = ttk.Frame(content, relief="groove", width=width, height=height)
 
-framedata = ttk.Frame(content, relief="groove", width=1440, height=120)
+framedata = ttk.Frame(content, relief="groove", width=width, height=120)
 
 
 frame1.grid(column=0, row=1, rowspan=3, columnspan=2)
@@ -47,7 +49,7 @@ for i in range(0, 6):
 namelbl = ttk.Label(content, textvariable=gps_string, font=("Helvetica", 32)).grid(column=0, row=19, columnspan=2, pady=10)
 
 root.resizable(False, False)
-root.geometry('{}x{}'.format(1440, 800))
+root.geometry('{}x{}'.format(width, 680))
 gps.start_gps()
 
 while True:
