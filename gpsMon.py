@@ -48,10 +48,10 @@ class gpsMon:
                         snr = str(sat['ss'])
                         used = str(sat['used'])
 
-                        print("PRN: " + prn, end='')
-                        print(" \tElevation: " + el, end='')
-                        print(" \tAzimuth: " + az, end='')
-                        print(" \tSNR: " + snr, end='')
+                        print("PRN:  " + prn, end='')
+                        print(" \tElevation:  " + el, end='')
+                        print(" \tAzimuth:  " + az, end='')
+                        print(" \tSNR:  " + snr, end='')
                         if used:
                             print(" \tUsed: Y")
                         else:
