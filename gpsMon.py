@@ -28,13 +28,14 @@ class gpsMon:
                 print(self.gps_data_string)
 
                 for sat in self.data_stream.SKY["satellites"]:
-                    prn = "PRN: " + str(sat[sat]["PRN"])
+                    if isinstance(sat, dict):
+                        prn = "PRN: " + str(sat["PRN"])
                     #el = sat['el']
                    # az = str(sat['az'])
                    # snr = str(sat['ss'])
                    # used = str(sat['used'])
 
-                    print("PRN: " + prn, end='')
+                        print("PRN: " + prn, end='')
                     #print(" Elevation: " + el, end='')
                     #print(" Azimuth: " + az, end='')
                     #print(" SNR: " + snr, end='')
