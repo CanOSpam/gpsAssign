@@ -28,7 +28,7 @@ class gpsMon:
                 print(self.gps_data_string)
 
                 for sat in self.data_stream.SKY["satellites"]:
-                   prn = sat['PRN']
+                   prn = sat[0:10]
                    print("PRN: " + prn, end='')
                    # el = sat['el']
                    # az = str(sat['az'])
