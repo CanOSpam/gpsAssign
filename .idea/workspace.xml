@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8844ceea-9a92-4d71-9ef8-3471091cae48" name="Default" comment="" />
+    <list default="true" id="8844ceea-9a92-4d71-9ef8-3471091cae48" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gpsMon.py" afterPath="$PROJECT_DIR$/gpsMon.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,8 +28,8 @@
       <file leaf-file-name="gpsMon.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gpsMon.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-217">
-              <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+            <state relative-caret-position="400">
+              <caret line="34" column="56" lean-forward="false" selection-start-line="34" selection-start-column="56" selection-end-line="34" selection-end-column="56" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -59,8 +61,8 @@
       <list>
         <option value="$PROJECT_DIR$/ui.py" />
         <option value="$PROJECT_DIR$/testThread.py" />
-        <option value="$PROJECT_DIR$/gpsMon.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/gpsMon.py" />
       </list>
     </option>
   </component>
@@ -264,8 +266,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gpsMon.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-217">
-          <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        <state relative-caret-position="400">
+          <caret line="34" column="56" lean-forward="false" selection-start-line="34" selection-start-column="56" selection-end-line="34" selection-end-column="56" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>

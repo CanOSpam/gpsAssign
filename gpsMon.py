@@ -31,8 +31,8 @@ class gpsMon:
                 lat = self.data_stream.TPV['lat']
                 lon = self.data_stream.TPV['lon']
 
-                dms_lat = self.degrees_to_dms(lat)
-                dms_lon = self.degrees_to_dms(lon)
+                dms_lat = self.degrees_to_dms(float(lat))
+                dms_lon = self.degrees_to_dms(float(lon))
 
 
                 self.gps_data_string = ('Time: ' + str(time) + ' Lat: ' + str(dms_lat) + ' Lon: ' + str(dms_lon))
