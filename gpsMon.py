@@ -29,16 +29,16 @@ class gpsMon:
 
                 for sat in self.data_stream.SKY["satellites"]:
                     if isinstance(sat, dict):
-                        prn = "PRN: " + str(sat["PRN"])
-                    #el = sat['el']
-                   # az = str(sat['az'])
-                   # snr = str(sat['ss'])
-                   # used = str(sat['used'])
+                        prn = str(sat["PRN"])
+                        el = str(sat['el'])
+                        az = str(sat['az'])
+                        snr = str(sat['ss'])
+                        used = str(sat['used'])
 
                         print("PRN: " + prn, end='')
-                    #print(" Elevation: " + el, end='')
-                    #print(" Azimuth: " + az, end='')
-                    #print(" SNR: " + snr, end='')
-                    #print(" Used: " + used)
+                        print(" Elevation: " + el, end='')
+                        print(" Azimuth: " + az, end='')
+                        print(" SNR: " + snr, end='')
+                        print(" Used: " + used)
 
 
