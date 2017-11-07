@@ -19,7 +19,7 @@ class gpsMon:
         degrees = math.floor(lat_or_lon)
         minutes = math.floor(60 * (lat_or_lon - degrees))
         seconds = 3600 * (lat_or_lon - degrees) - (60 * minutes)
-        return 'Degrees: ' + str(degrees) + '|| Minutes: ' + str(minutes) + '|| Seconds: ' + str(seconds)
+        return 'Degrees: ' + str(degrees) + ' || Minutes: ' + str(minutes) + ' || Seconds: ' + str(seconds)
 
     def gps_worker(self):
         print('Started gps worker')
@@ -49,12 +49,12 @@ class gpsMon:
                         used = str(sat['used'])
 
                         print("PRN: " + prn, end='')
-                        print(" Elevation: " + el, end='')
-                        print(" Azimuth: " + az, end='')
-                        print(" SNR: " + snr, end='')
+                        print(" \tElevation: " + el, end='')
+                        print(" \tAzimuth: " + az, end='')
+                        print(" \tSNR: " + snr, end='')
                         if used:
-                            print(" Used: Y")
+                            print(" \tUsed: Y")
                         else:
-                            print(" Used: N")
+                            print(" \tUsed: N")
 
 
