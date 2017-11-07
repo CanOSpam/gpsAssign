@@ -19,7 +19,7 @@ class gpsMon:
         degrees = math.floor(lat_or_lon)
         minutes = math.floor(60 * (lat_or_lon - degrees))
         seconds = 3600 * (lat_or_lon - degrees) - (60 * minutes)
-        return 'Degrees: ' + str(degrees) + ' Minutes: ' + str(minutes) + ' Seconds: ' + str(seconds)
+        return 'Degrees: ' + str(degrees) + '|| Minutes: ' + str(minutes) + '|| Seconds: ' + str(seconds)
 
     def gps_worker(self):
         print('Started gps worker')
@@ -37,7 +37,7 @@ class gpsMon:
                     lon = self.degrees_to_dms(float(lon))
 
 
-                self.gps_data_string = ('Time: ' + str(time) + ' Lat: ' + str(lat) + ' Lon: ' + str(lon))
+                self.gps_data_string = ('Time: ' + str(time) + ' \nLat: ' + str(lat) + ' \nLon: ' + str(lon))
                 print(self.gps_data_string)
 
                 for sat in self.data_stream.SKY['satellites']:
