@@ -31,16 +31,16 @@ class gpsMon:
                 lat = self.data_stream.TPV['lat']
                 lon = self.data_stream.TPV['lon']
 
-                if(dms_lat != "n/a"):
+                if(lat != 'n/a'):
                     dms_lat = self.degrees_to_dms(float(lat))
-                if (dms_lon != "n/a"):
+                if (lon != 'n/a'):
                     dms_lon = self.degrees_to_dms(float(lon))
 
 
                 self.gps_data_string = ('Time: ' + str(time) + ' Lat: ' + str(dms_lat) + ' Lon: ' + str(dms_lon))
                 print(self.gps_data_string)
 
-                for sat in self.data_stream.SKY["satellites"]:
+                for sat in self.data_stream.SKY['satellites']:
                     if isinstance(sat, dict):
                         prn = str(sat['PRN'])
                         el = str(sat['el'])
