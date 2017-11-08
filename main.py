@@ -56,8 +56,8 @@ def text_updater():
     gps_string.set(gps.gps_data_string)
     i=0
     for sat in gps.satellites:
+        print(sat)
         if isinstance(sat, dict):
-            print('I ran, I ran so far away')
             Label(content, text="PRN: " + sat['PRN']).grid(column=0, row=3 * i + 1, columnspan=2)
             Label(content, text="Elevation: " + sat['el']).grid(column=0, row=3 * i + 2)
             Label(content, text="Azimuth: " + sat['az']).grid(column=1, row=3 * i + 2)
