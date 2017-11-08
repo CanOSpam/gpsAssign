@@ -53,15 +53,6 @@ frame6.grid(column=0, row=16, rowspan=3, columnspan=2)
 
 framedata.grid(column=0, row=19, rowspan=2, columnspan=2)
 
-a = array("i", [1, 2, 3,4,5,6,7,8])
-
-for i in range(0, 6):
-    Label(content, text="PRN: " + "N/A").grid(column=0, row=3*i+1, columnspan=2)
-    Label(content, text="Elevation: " + "N/A").grid(column=0, row=3*i+2)
-    Label(content, text="Azimuth: " + "N/A").grid(column=1, row=3*i+2)
-    Label(content, text="SNR: " + "N/A").grid(column=0, row=3*i+3)
-    Label(content, text="Used: " + "N/A").grid(column=1, row=3*i+3)
-
 namelbl = ttk.Label(content, textvariable=gps_string, font=("Helvetica", 12)).grid(column=0, row=19, columnspan=2, pady=10)
 
 root.resizable(False, False)
