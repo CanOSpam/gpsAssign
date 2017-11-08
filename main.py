@@ -70,7 +70,7 @@ gps.start_gps()
 
 root.after(500, text_updater)
 root.mainloop()
-#gps.stop = True
+gps.stop = True
 
 
 

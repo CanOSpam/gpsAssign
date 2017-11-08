@@ -28,7 +28,8 @@ class gpsMon:
     def gps_worker(self):
         print('Started gps worker')
         for new_data in self.gps_socket:
-            if (exit):
+            if (self.stop):
+                print('stopping thread')
                 sys.exit()
             if new_data:
                 self.data_stream.unpack(new_data)
