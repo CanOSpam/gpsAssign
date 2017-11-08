@@ -19,11 +19,11 @@ def text_updater():
     for sat in gps.satellites:
         print(sat)
         if isinstance(sat, dict):
-            Label(content, text="PRN: " + sat['PRN']).grid(column=0, row=3 * i + 1, columnspan=2)
-            Label(content, text="Elevation: " + sat['el']).grid(column=0, row=3 * i + 2)
-            Label(content, text="Azimuth: " + sat['az']).grid(column=1, row=3 * i + 2)
-            Label(content, text="SNR: " + sat['ss']).grid(column=0, row=3 * i + 3)
-            Label(content, text="Used: " + sat['used']).grid(column=1, row=3 * i + 3)
+            Label(content, text="PRN: " + str(sat['PRN'])).grid(column=0, row=3 * i + 1, columnspan=2)
+            Label(content, text="Elevation: " + str(sat['el'])).grid(column=0, row=3 * i + 2)
+            Label(content, text="Azimuth: " + str(sat['az'])).grid(column=1, row=3 * i + 2)
+            Label(content, text="SNR: " + str(sat['ss'])).grid(column=0, row=3 * i + 3)
+            Label(content, text="Used: " + str(sat['used'])).grid(column=1, row=3 * i + 3)
             i=i+1
     root.after(500, text_updater())
 
