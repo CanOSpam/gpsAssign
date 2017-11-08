@@ -15,7 +15,6 @@ gps = gpsMon()
 def text_updater():
     gps_string.set(gps.raw_data)
     i=0
-    print('updater')
     for sat in gps.satellites:
         if isinstance(sat, dict):
             Label(content, text="PRN: " + str(sat['PRN'])).grid(column=0, row=3 * i + 1, columnspan=2)
@@ -24,7 +23,7 @@ def text_updater():
             Label(content, text="SNR: " + str(sat['ss'])).grid(column=0, row=3 * i + 3)
             Label(content, text="Used: " + str(sat['used'])).grid(column=1, row=3 * i + 3)
             i=i+1
-    root.after(0, text_updater)
+    root.after(500, text_updater)
 
 #Title
 namelbl = ttk.Label(content, text="GPS APP", font=("Helvetica", 32), foreground="red")
@@ -60,7 +59,7 @@ root.resizable(False, False)
 root.geometry('{}x{}'.format(width, 680))
 gps.start_gps()
 
-root.after(0, text_updater)
+#root.after(0, text_updater)
 root.mainloop()
 gps.stop = True
 

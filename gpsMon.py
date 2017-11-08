@@ -1,3 +1,27 @@
+# /*------------------------------------------------------------------------------------------------------------------
+# -- SOURCE FILE: gpsMon.py - A
+# --
+# -- PROGRAM: python
+# --
+# -- FUNCTIONS:
+# -- start_gps
+# -- degrees_to_dms
+# -- gps_worker
+# --
+# --
+# --
+# -- DATE: November 7th, 2017
+# --
+# -- REVISIONS: None
+# --
+# -- DESIGNER: Tim Bruecker, JC Tee
+# --
+# -- PROGRAMMER: Tim Bruecker
+# --
+# -- NOTES:
+# -- This part of the
+# ----------------------------------------------------------------------------------------------------------------------*/
+
 from gps3 import gps3
 import threading
 import os
@@ -14,17 +38,70 @@ class gpsMon:
         self.raw_data = 'init'
         self.stop = False
 
-
+# /*------------------------------------------------------------------------------------------------------------------
+# -- FUNCTION: start_gps
+# --
+# -- DATE: November 7th, 2017
+# --
+# -- REVISIONS: None
+# --
+# -- DESIGNER: Tim Bruecker, JC Tee
+# --
+# -- PROGRAMMER: Tim Bruecker
+# --
+# -- INTERFACE: start_gps()
+# --
+# -- RETURNS: nothing
+# --
+# -- NOTES:
+# -- The program
+# ----------------------------------------------------------------------------------------------------------------------*/
     def start_gps(self):
         thread = threading.Thread(target=self.gps_worker)
         thread.start()
 
+# /*------------------------------------------------------------------------------------------------------------------
+# -- FUNCTION: degrees_to_dms
+# --
+# -- DATE: November 7th, 2017
+# --
+# -- REVISIONS: None
+# --
+# -- DESIGNER: Tim Bruecker, JC Tee
+# --
+# -- PROGRAMMER: Tim Bruecker
+# --
+# -- INTERFACE: degrees_to_dms(lat_or_lon)
+# --
+# -- RETURNS: String
+# --
+# -- NOTES:
+# -- The program
+# ----------------------------------------------------------------------------------------------------------------------*/
     def degrees_to_dms(self, lat_or_lon):
         degrees = math.floor(lat_or_lon)
         minutes = math.floor(60 * (lat_or_lon - degrees))
         seconds = 3600 * (lat_or_lon - degrees) - (60 * minutes)
         return 'Degrees: ' + str(degrees) + ' || Minutes: ' + str(minutes) + ' || Seconds: ' + str(seconds)
 
+# /*------------------------------------------------------------------------------------------------------------------
+# -- FUNCTION: gps_worker
+# --
+# -- DATE: November 7th, 2017
+# --
+# -- REVISIONS: None
+# --
+# -- DESIGNER: Tim Bruecker, JC Tee
+# --
+# -- PROGRAMMER: Tim Bruecker
+# --
+# -- INTERFACE: gps_worker()
+# --
+# -- RETURNS: nothing
+# --
+# -- NOTES:
+# -- The program
+# ----------------------------------------------------------------------------------------------------------------------*/
     def gps_worker(self):
         print('Started gps worker')
         for new_data in self.gps_socket:
