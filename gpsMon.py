@@ -19,7 +19,10 @@
 # -- PROGRAMMER: Tim Bruecker
 # --
 # -- NOTES:
-# -- This part of the
+# -- This part of the application defines the thread. It opens the socket and starts monitoring for new GPS data. When
+# -- it gets new data it prints it to the console. The thread also handles converting decimal degrees to degrees, minutes
+# -- and seconds through the degrees_to_dms method. The data is also accessible to outside sources through the satellites
+# -- and raw_data variables to be used in a GUI or other application.
 # ----------------------------------------------------------------------------------------------------------------------*/
 
 from gps3 import gps3
@@ -54,7 +57,7 @@ class gpsMon:
 # -- RETURNS: nothing
 # --
 # -- NOTES:
-# -- The program
+# -- This method starts the thread contained in this class.
 # ----------------------------------------------------------------------------------------------------------------------*/
     def start_gps(self):
         thread = threading.Thread(target=self.gps_worker)
@@ -76,7 +79,7 @@ class gpsMon:
 # -- RETURNS: String
 # --
 # -- NOTES:
-# -- The program
+# -- This method converts decimal degrees to a degrees in degrees, minutes, and seconds as a string.
 # ----------------------------------------------------------------------------------------------------------------------*/
     def degrees_to_dms(self, lat_or_lon):
         degrees = math.floor(lat_or_lon)
@@ -100,7 +103,8 @@ class gpsMon:
 # -- RETURNS: nothing
 # --
 # -- NOTES:
-# -- The program
+# -- This method is what the thread runs. It is an infinite loop that continually monitors the data stream for new data
+# -- and prints it to the console. It also assigns the new data to variable that are accessible outside of the thread.
 # ----------------------------------------------------------------------------------------------------------------------*/
     def gps_worker(self):
         print('Started gps worker')
