@@ -25,7 +25,7 @@ def text_updater():
             Label(content, text="SNR: " + sat['ss']).grid(column=0, row=3 * i + 3)
             Label(content, text="Used: " + sat['used']).grid(column=1, row=3 * i + 3)
             i=i+1
-    root.after(500, text_updater)
+    root.after(500, text_updater())
 
 #Title
 namelbl = ttk.Label(content, text="GPS APP", font=("Helvetica", 32), foreground="red")
