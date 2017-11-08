@@ -15,7 +15,7 @@ gps = gpsMon()
 def text_updater():
     gps_string.set(gps.raw_data)
     i=0
-    print(gps.satellites)
+    print("updater")
     for sat in gps.satellites:
         print(sat)
         if isinstance(sat, dict):
