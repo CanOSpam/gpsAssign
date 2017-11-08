@@ -26,7 +26,7 @@ class gpsMon:
         for new_data in self.gps_socket:
             if new_data:
                 self.data_stream.unpack(new_data)
-                os.system('clear')
+
                 time = self.data_stream.TPV['time']
                 lat = self.data_stream.TPV['lat']
                 lon = self.data_stream.TPV['lon']
@@ -36,8 +36,9 @@ class gpsMon:
                 if (lon != 'n/a'):
                     lon = self.degrees_to_dms(float(lon))
 
-
                 self.gps_data_string = ('Time: ' + str(time) + ' \nLat: ' + str(lat) + ' \nLon: ' + str(lon))
+
+                os.system('clear')
                 print(self.gps_data_string)
 
                 for sat in self.data_stream.SKY['satellites']:
