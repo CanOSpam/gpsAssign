@@ -61,7 +61,7 @@ root.resizable(False, False)
 root.geometry('{}x{}'.format(width, 680))
 gps.start_gps()
 
-root.after(500, text_updater)
+text_updater()
 root.mainloop()
 gps.stop = True
 
