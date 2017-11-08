@@ -10,6 +10,7 @@ class gpsMon:
         self.gps_socket.connect()
         self.gps_socket.watch()
         self.satellites = "init"
+        self.raw_data
 
 
     def start_gps(self):
@@ -37,6 +38,7 @@ class gpsMon:
                 if (lon != 'n/a'):
                     lon = self.degrees_to_dms(float(lon))
 
+                self.raw_data = ('Time: ' + str(time) + ' Lat: ' + str(lat) + ' Lon: ' + str(lon))
                 self.gps_data_string = ('Time: ' + str(time) + ' \nLat: ' + str(lat) + ' \nLon: ' + str(lon))
 
                 os.system('clear')
