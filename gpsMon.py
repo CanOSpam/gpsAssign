@@ -38,7 +38,7 @@ class gpsMon:
                 if (lon != 'n/a'):
                     lon = self.degrees_to_dms(float(lon))
 
-                self.raw_data = ('Time: ' + str(time) + ' Lat: ' + str(lat) + ' Lon: ' + str(lon))
+                self.raw_data = ('Time: ' + str(time) + '\nLat: ' + str(lat) + '\nLon: ' + str(lon))
                 self.gps_data_string = ('Time: ' + str(time) + ' \nLat: ' + str(lat) + ' \nLon: ' + str(lon))
 
                 os.system('clear')

@@ -62,7 +62,7 @@ for i in range(0, 6):
     Label(content, text="SNR: " + "N/A").grid(column=0, row=3*i+3)
     Label(content, text="Used: " + "N/A").grid(column=1, row=3*i+3)
 
-namelbl = ttk.Label(content, textvariable=gps_string, font=("Helvetica", 14)).grid(column=0, row=19, columnspan=2, pady=10)
+namelbl = ttk.Label(content, textvariable=gps_string, font=("Helvetica", 12)).grid(column=0, row=19, columnspan=2, pady=10)
 
 root.resizable(False, False)
 root.geometry('{}x{}'.format(width, 680))
