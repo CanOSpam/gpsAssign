@@ -55,6 +55,7 @@ gps.start_gps()
 def text_updater():
     gps_string.set(gps.gps_data_string)
     i=0
+    print(gps.satellites)
     for sat in gps.satellites:
         print(sat)
         if isinstance(sat, dict):
