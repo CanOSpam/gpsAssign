@@ -2,6 +2,7 @@ from gps3 import gps3
 import threading
 import os
 import math
+import sys
 
 class gpsMon:
     def __init__(self):
@@ -11,6 +12,7 @@ class gpsMon:
         self.gps_socket.watch()
         self.satellites = "init"
         self.raw_data = "init"
+        self.stop = False
 
 
     def start_gps(self):
@@ -61,5 +63,7 @@ class gpsMon:
                             print(" \tUsed: Y")
                         else:
                             print(" \tUsed: N")
+                if(exit):
+                    sys.exit()
 
 
