@@ -9,6 +9,7 @@ class gpsMon:
         self.data_stream = gps3.DataStream()
         self.gps_socket.connect()
         self.gps_socket.watch()
+        self.satellites
 
 
     def start_gps(self):
@@ -41,7 +42,8 @@ class gpsMon:
                 os.system('clear')
                 print(self.gps_data_string)
 
-                for sat in self.data_stream.SKY['satellites']:
+                self.satellites = self.data_stream.SKY['satellites']
+                for sat in self.satellites:
                     if isinstance(sat, dict):
                         prn = str(sat['PRN'])
                         el = str(sat['el'])
