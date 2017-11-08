@@ -13,7 +13,7 @@ gps = gpsMon()
 
 
 def text_updater():
-    gps_string.set(gps.gps_data_string)
+    gps_string.set(gps.raw_data)
     i=0
     print(gps.satellites)
     for sat in gps.satellites:

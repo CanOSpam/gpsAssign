@@ -10,7 +10,7 @@ class gpsMon:
         self.gps_socket.connect()
         self.gps_socket.watch()
         self.satellites = "init"
-        self.raw_data
+        self.raw_data = "init"
 
 
     def start_gps(self):
