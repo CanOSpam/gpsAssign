@@ -13,7 +13,7 @@ gps = gpsMon()
 
 
 def text_updater():
-    namelbl['text'] = gps.raw_data
+    gps_string.set(gps.raw_data)
     i=0
     print(gps.satellites)
     for sat in gps.satellites:
@@ -52,6 +52,8 @@ frame5.grid(column=0, row=13, rowspan=3, columnspan=2)
 frame6.grid(column=0, row=16, rowspan=3, columnspan=2)
 
 framedata.grid(column=0, row=19, rowspan=2, columnspan=2)
+
+a = array("i", [1, 2, 3,4,5,6,7,8])
 
 namelbl = ttk.Label(content, textvariable=gps_string, font=("Helvetica", 12)).grid(column=0, row=19, columnspan=2, pady=10)
 
