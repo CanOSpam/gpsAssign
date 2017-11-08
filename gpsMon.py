@@ -28,6 +28,8 @@ class gpsMon:
     def gps_worker(self):
         print('Started gps worker')
         for new_data in self.gps_socket:
+            if (exit):
+                sys.exit()
             if new_data:
                 self.data_stream.unpack(new_data)
 
@@ -63,7 +65,3 @@ class gpsMon:
                             print(" \tUsed: Y")
                         else:
                             print(" \tUsed: N")
-                if(exit):
-                    sys.exit()
-
-
