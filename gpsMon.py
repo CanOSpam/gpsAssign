@@ -9,7 +9,7 @@ class gpsMon:
         self.data_stream = gps3.DataStream()
         self.gps_socket.connect()
         self.gps_socket.watch()
-        self.satellites
+        self.satellites = "init"
 
 
     def start_gps(self):
