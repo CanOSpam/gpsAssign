@@ -11,6 +11,22 @@ content.grid(column=0, row=0)
 gps_string = StringVar()
 gps = gpsMon()
 
+
+def text_updater():
+    gps_string.set(gps.gps_data_string)
+    i=0
+    print(gps.satellites)
+    for sat in gps.satellites:
+        print(sat)
+        if isinstance(sat, dict):
+            Label(content, text="PRN: " + sat['PRN']).grid(column=0, row=3 * i + 1, columnspan=2)
+            Label(content, text="Elevation: " + sat['el']).grid(column=0, row=3 * i + 2)
+            Label(content, text="Azimuth: " + sat['az']).grid(column=1, row=3 * i + 2)
+            Label(content, text="SNR: " + sat['ss']).grid(column=0, row=3 * i + 3)
+            Label(content, text="Used: " + sat['used']).grid(column=1, row=3 * i + 3)
+            i=i+1
+    root.after(500, text_updater)
+
 #Title
 namelbl = ttk.Label(content, text="GPS APP", font=("Helvetica", 32), foreground="red")
 namelbl.grid(column=0, row=0, columnspan=2,pady=10)
@@ -51,21 +67,6 @@ namelbl = ttk.Label(content, textvariable=gps_string, font=("Helvetica", 32)).gr
 root.resizable(False, False)
 root.geometry('{}x{}'.format(width, 680))
 gps.start_gps()
-
-def text_updater():
-    gps_string.set(gps.gps_data_string)
-    i=0
-    print(gps.satellites)
-    for sat in gps.satellites:
-        print(sat)
-        if isinstance(sat, dict):
-            Label(content, text="PRN: " + sat['PRN']).grid(column=0, row=3 * i + 1, columnspan=2)
-            Label(content, text="Elevation: " + sat['el']).grid(column=0, row=3 * i + 2)
-            Label(content, text="Azimuth: " + sat['az']).grid(column=1, row=3 * i + 2)
-            Label(content, text="SNR: " + sat['ss']).grid(column=0, row=3 * i + 3)
-            Label(content, text="Used: " + sat['used']).grid(column=1, row=3 * i + 3)
-            i=i+1
-    root.after(500, text_updater())
 
 text_updater()
 root.mainloop()
