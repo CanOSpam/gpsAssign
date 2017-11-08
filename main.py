@@ -32,7 +32,7 @@ namelbl = ttk.Label(content, text="GPS APP", font=("Helvetica", 32), foreground=
 namelbl.grid(column=0, row=0, columnspan=2,pady=10)
 
 #Frames
-width = 400
+width = 720
 height = 80
 frame1 = ttk.Frame(content, relief="groove", width=width, height=height)
 frame2 = ttk.Frame(content, relief="groove", width=width, height=height)
